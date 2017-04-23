@@ -12,13 +12,15 @@ linkedin_username: elkhandadashov
 markdown: kramdown
 permalink: pretty
 
-paginate: 2
+paginate: 1
+paginate_path: "/blog/post:num/"
 
 gems: 
 - jekyll-sitemap
 - jekyll-paginate
 - jekyll-gist
-#gems: [jekyll-paginate,jekyll-sitemap,jekyll-gist]
+
+gems: [jekyll-paginate,jekyll-sitemap,jekyll-gist]
 
 highlighter: rouge
 kramdown:
