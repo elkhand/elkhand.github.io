@@ -8,6 +8,8 @@ categories: jekyll update
 mathjax: true
 ---
 
+Started new blog, where will share the daily problem solving challenges which i faced and solved - with intention to save common human time which could have been spent on the same problem.
+
 Started with wordpress.com, ended up with Jekyll blog.
 
 I started my 1st blog on Wordpress.com, but in the second blog, when i needed to insert table into my post, my wordpress.com journey has ended, as they did not have simple way of adding table into the blog post.
