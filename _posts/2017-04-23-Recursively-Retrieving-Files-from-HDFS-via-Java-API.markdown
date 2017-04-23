@@ -3,7 +3,7 @@ layout: post
 comments: true
 title:  "Recursively retrieving files from HDFS via Java Api"
 excerpt: "You will know the differences between lsitStatus(), listFiles(), globStatus()."
-date:   2017-04-23 01:00:00
+date:   2017-04-23 02:00:00
 mathjax: true
 ---
 
@@ -53,11 +53,16 @@ Then fileStatuses will contain 2 paths in it:
 /parent/secondChildDir/
 ```
 After getting '*' converted into all potential paths without '*', now we can use either this function, with recursive=false for immediate files in the above directories:
-```public RemoteIterator LocatedFileStatus  listFiles(final Path f, final boolean recursive) throws FileNotFoundException, IOException
+```
+public RemoteIterator LocatedFileStatus  listFiles(final Path f, final boolean recursive) throws FileNotFoundException, IOException
 ```
 or this function for immediate files in the above directories:
-```public FileStatus[] listStatus(Path[] files) throws FileNotFoundException, IOException
+
+```
+public FileStatus[] listStatus(Path[] files) throws FileNotFoundException, IOException
 ```
 Note: You need to check if the returned path is file, otherwise fs.listStatus() returns both files and directories which reside immediately in the given directory.
 # Example Code
-https://gist.github.com/elkhand/8df3d5371c539c7fd1962153bb801c28]
+
+{% gist elkhand/8df3d5371c539c7fd1962153bb801c28 %}
+

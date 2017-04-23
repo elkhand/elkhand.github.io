@@ -1,27 +1,21 @@
 ---
 layout: post
 comments: true
-title:  "Welcome to Jekyll!"
+title:  "Switching to Jekyll!"
+excerpt: "CSS/RSS is inspired from Andrew Karpaty's blog"
 date:   2017-04-22 22:08:03 -0700
 categories: jekyll update
 mathjax: true
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Started with wordpress.com, ended up with Jekyll blog.
 
-Jekyll also offers powerful support for code snippets:
+I started my 1st blog on Wordpress.com, but in the second blog, when i needed to insert table into my post, my wordpress.com journey has ended, as they did not have simple way of adding table into the blog post.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Another option i wanted to have Google Analytics in my blogs, which was also not possible in wordpress.com's basic subscription.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+With Jekyll you have full control of your blog, data & design. Using Disqus for comment funcitonality and Google Analytics, is all i wanted to start simple blog.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+I forked from Andrew Karpathy's github repo, I liked his blog's simplest design(but knowledgeful content :)
+
+I added my own parts (pagination, comment count, different icons for social media).

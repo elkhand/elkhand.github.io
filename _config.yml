@@ -8,11 +8,13 @@ twitter_username: elkhandad
 github_username:  elkhand
 linkedin_username: elkhandadashov
 
+timezone: "America/Los_Angeles"
+
 # Build settings
 markdown: kramdown
 permalink: pretty
 
-paginate: 1
+paginate: 5
 paginate_path: "/blog/post:num/"
 
 gems: 
