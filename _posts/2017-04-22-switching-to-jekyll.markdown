@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Switching to Jekyll"
-excerpt: "CSS/RSS is inspired from Andrew Karpaty's blog"
+excerpt: "CSS/RSS is inspired from Andrew Karpathy's blog"
 date:   2017-04-22 22:08:03 -0700
 categories: jekyll update
 mathjax: true
