@@ -1,0 +1,27 @@
+# Site settings
+title: Elkhan Dadashov's blog
+email: 
+description: "Knowledge Share"
+baseurl: ""
+url: "http://elkhand.github.io"
+twitter_username: elkhandad
+github_username:  elkhand
+linkedin_username: elkhandadashov
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+paginate: 2
+
+gems: 
+- jekyll-sitemap
+- jekyll-paginate
+- jekyll-gist
+#gems: [jekyll-paginate,jekyll-sitemap,jekyll-gist]
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
