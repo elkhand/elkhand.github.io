@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Recursively retrieving files from HDFS via Java Api"
-excerpt: "You will know the differences between lsitStatus(), listFiles(), globStatus()."
+excerpt: "You will know the differences between listStatus(), listFiles(), globStatus()."
 date:   2017-04-23 02:00:00
 mathjax: true
 ---
