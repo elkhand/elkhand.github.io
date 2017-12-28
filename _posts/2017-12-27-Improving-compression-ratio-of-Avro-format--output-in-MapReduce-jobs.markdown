@@ -83,7 +83,7 @@ conf.set("avro.mapred.sync.interval",134217728); // 128 MB
 
 Same input data was compressed with different syncByteInterval values and results were compared for Deflate 9 and Bzip2 compression codecs:
 
-|syncIntervalInBytes |Deflate 9 Output (GB) |	Space Saved with Defalte 9 (%) |	Bzip2 Output (GB) |Space Saved with Bzip2 (%) |
+|syncIntervalInBytes |Deflate 9 Output (GB) |	Space Saved with Deflate 9 (%) |	Bzip2 Output (GB) |Space Saved with Bzip2 (%) |
 |      ------------- |:       -------------:|                            -----:|                -----:|                     -----:|
 |               16KB |                  1.3 |                      43.47826087 |                  1.3 | 	          43.47826087 |
 |                4 M |                  1.2 |                      47.82608696 |               0.8446 |           **63.27826087** |
@@ -92,7 +92,7 @@ Same input data was compressed with different syncByteInterval values and result
 |              128 M |                  1.2 |                      47.82608696 |               0.8341 |               63.73478261 |
 
 
-**Space Saved = [100- (100 * output / input)]**
+**Space Saved = [100 - (100 * output / input)]**
 
 As you can see, for deflate codec increasing syncByteInterval does not help much for achieving  better compression.
 
