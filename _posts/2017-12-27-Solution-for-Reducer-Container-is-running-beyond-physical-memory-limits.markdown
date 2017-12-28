@@ -19,11 +19,11 @@ mapreduce.reduce.memory.mb : 5120
 mapreduce.reduce.java.opts : 4608
 ```
 
-## **TL;DR  (Old Conclusion with logical reasoning)**: Keep enough memory buffer between JVM memory and container memory allocation.
+### TL;DR  (Old Conclusion with logical reasoning)
+Keep enough memory buffer between JVM memory and container memory allocation.
+Recommended value is usually JVM heap memory being 80% of the total reduce/map container memory.
 
-## <u>Detailed context</u>:
-
-### At first, want to mention that this is ** <u>not</u> OOM exception causing this failure **. 
+### At first, want to mention that this is <u>not</u> OOM exception causing this failure. 
 
 OOM usually occurs because of memory leak in your code, when you try to allocate more memory than you have for your Java objects in JVM heap.
 
@@ -44,12 +44,13 @@ SnappyCodec uses SnappyDecompressor, which uses direct byte buffers:
 **_Ref_**: http://grepcode.com/file/repo1.maven.org/maven2/org.apache.hadoop/hadoop-common/2.7.1/org/apache/hadoop/io/compress/snappy/SnappyDecompressor.java#SnappyDecompressor
 
 
-###  Some more insights of direct byte buffer:
+####  Some more insights of direct byte buffer:
 "Direct buffers are intended for interaction with channels and native I/O routines. They make a best effort to store the byte elements in a memory area that a channel can use for direct, or raw, access by using native code to tell the operating system to drain or fill the memory area directly.
 
 Direct buffers are optimal for I/O, but they may be more expensive to create than nondirect byte buffers. The memory used by direct buffers is allocated by calling through to native, operating system-specific code, bypassing the standard JVM heap. **The memory-storage areas of direct buffers are not subject to garbage collection because they are outside the standard JVM heap.**"
 
 **_Ref_**: https://stackoverflow.com/questions/5670862/bytebuffer-allocate-vs-bytebuffer-allocatedirect
+
 **_Ref_**: https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html
 
 Thus when Snappy is used for intermediate compression, Snappy uses off-heap memory, and when it does not have enough space to allocate it causes your reduce tasks fail, which ends up your job failing.
@@ -58,6 +59,7 @@ Thus when Snappy is used for intermediate compression, Snappy uses off-heap memo
 One solution will be keeping enough memory between JVM memory allocation and container memory allocation so that enough off-heap memory will be there for decompression. Decreasing your JVM memory allocation will make your job run slower (as you can create/hold fewer objects in JVM heap), but will not cause your job failure.
 
 Recommended value is usually JVM heap memory being 80% of the total reduce/map container memory.
+
 **_Ref_**: http://crazyadmins.com/tag/tuning-yarn-to-get-maximum-performance/
 
 
